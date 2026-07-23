@@ -1,0 +1,26 @@
+{
+  "name": "@mohamed_ayad40/common",
+  "version": "1.0.5",
+  "description": "Shared RabbitMQ client for microservices",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "amqplib": "^0.10.3"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.5",
+    "@types/node": "^20.19.37",
+    "typescript": "^5.9.3"
+  }
+}
