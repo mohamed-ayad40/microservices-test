@@ -1,7 +1,7 @@
 import { title } from "process"
-import { Todo, TodoDocument } from "../models/todo.model"
-import { CreateTodoDTO } from "../types/todo.types"
-import { publishToQueue } from "../config/rabbitmq"
+import { Todo, TodoDocument } from "../models/todo.model.js"
+import { CreateTodoDTO } from "../types/todo.types.js"
+import { publishToQueue } from "../config/rabbitmq.js"
 
 // Create a new todo
 export const createTodo = async (userId: string, email: string, name: string, todoData: CreateTodoDTO) => {

@@ -1,10 +1,10 @@
 import express, { Application } from "express"
 import cors from "cors"
 import dotenv from "dotenv"
-import { connectDatabase } from "./config/database"
-import todoRoutes from "./routes/todo.routes"
+import { connectDatabase } from "./config/database.js"
+import todoRoutes from "./routes/todo.routes.js"
 import cookieParser from "cookie-parser"
-import { closeRabbitMQ, connectRabbitMQ } from "./config/rabbitmq"
+import { closeRabbitMQ, connectRabbitMQ } from "./config/rabbitmq.js"
 
 dotenv.config()
 

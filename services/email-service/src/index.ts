@@ -1,12 +1,12 @@
 import express, { Application } from "express"
 import cors from "cors"
 import dotenv from "dotenv"
-import { initializeEmailTransporter } from "./config/email.config"
+import { initializeEmailTransporter } from "./config/email.config.js"
 import {
   closeRabbitMQ,
   connectRabbitMQ,
   consumeFromQueue,
-} from "./config/rabbitmq"
+} from "./config/rabbitmq.js"
 
 dotenv.config()
 

@@ -1,0 +1,35 @@
+name: Build and Push Microservices to Docker Hub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and Push User Service
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest ./user-service
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest
+
+      - name: Build and Push Todo Service
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/todo-service:latest ./todo-service
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/todo-service:latest
+
+      - name: Build and Push Email Service
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/email-service:latest ./email-service
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/email-service:latest

@@ -1,5 +1,5 @@
 import RabbitMQClient from "@mohamed_ayad40/common"
-import { handleTodoCreated } from "../services/email.service"
+import { handleTodoCreated } from "../services/email.service.js"
 
 const rabbitMQ = new RabbitMQClient({
   serviceName: "Todo Service",
