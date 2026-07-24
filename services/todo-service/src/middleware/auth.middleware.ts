@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express"
-import { extractUserIdFromToken } from "../utils/utils"
+import { extractUserIdFromToken } from "../utils/utils.js"
 import jwt from "jsonwebtoken"
 
 export type AuthRequest = Request & {

@@ -1,6 +1,6 @@
 import { Router, Response } from "express"
-import { createTodo } from "../services/todo.service"
-import { authenticateToken, AuthRequest } from "../middleware/auth.middleware"
+import { createTodo } from "../services/todo.service.js"
+import { authenticateToken, AuthRequest } from "../middleware/auth.middleware.js"
 
 const router = Router()
 

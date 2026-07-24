@@ -1,6 +1,6 @@
-import { getTransporter } from "../config/email.config"
-import { TodoCreatedEvent, EmailOptions } from "../types/email.types"
-import { getUserInfo, formatDate } from "../utils/utils"
+import { getTransporter } from "../config/email.config.js"
+import { TodoCreatedEvent, EmailOptions } from "../types/email.types.js"
+import { getUserInfo, formatDate } from "../utils/utils.js"
 
 // Send email using Nodemailer
 export const sendEmail = async (options: EmailOptions): Promise<void> => {

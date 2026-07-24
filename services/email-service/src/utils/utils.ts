@@ -1,7 +1,3 @@
-import jwt from "jsonwebtoken"
-
-// Fetch user information from user service
-// services/email-service/src/utils/utils.ts
 export const getUserInfo = async (event: any) => {
   try {
     // If you pass the email and name in the event, just return them
