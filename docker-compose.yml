@@ -16,3 +16,43 @@ services:
     ports:
       - "27017:27017"
     restart: always
+
+# 3. User Service
+  user-service:
+    image: mohamedayad40/user-service:latest
+    container_name: user_service_container
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - MONGO_URI=mongodb://mongodb_server:27017/users_db
+      - RABBITMQ_URL=amqp://rabbitmq_server:5672
+    depends_on:
+      - mongodb
+      - rabbitmq
+
+  # 4. Todo Service
+  todo-service:
+    image: mohamedayad40/todo-service:latest
+    container_name: todo_service_container
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - MONGO_URI=mongodb://mongodb_server:27017/todos_db
+      - RABBITMQ_URL=amqp://rabbitmq_server:5672
+    depends_on:
+      - mongodb
+      - rabbitmq
+
+  # 5. Email Service
+  email-service:
+    image: mohamedayad40/email-service:latest
+    container_name: email_service_container
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003
+      - RABBITMQ_URL=amqp://rabbitmq_server:5672
+    depends_on:
+      - rabbitmq
