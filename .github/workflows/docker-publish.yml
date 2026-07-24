@@ -21,15 +21,15 @@ jobs:
 
       - name: Build and Push User Service
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest ./user-service
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest ./services/user-service
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest
 
       - name: Build and Push Todo Service
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/todo-service:latest ./todo-service
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/todo-service:latest ./services/todo-service
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/todo-service:latest
 
       - name: Build and Push Email Service
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/email-service:latest ./email-service
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/email-service:latest ./services/email-service
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/email-service:latest
