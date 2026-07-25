@@ -53,16 +53,20 @@ A robust, production-ready backend system built with an event-driven Microservic
 ├── docker-compose.yml   # Infrastructure and orchestration configuration
 ├── package.json         # Root package (Monorepo shared dependencies)
 └── README.md            # Project documentation
+```
 
 ### 🏗️ Typical Service Anatomy
 Each microservice follows a clean, modular structure inside its directory:
 
+```text
 ├── src/
 │   ├── config/      # Database & RabbitMQ connection setups
-│   ├── controllers/ # Route handlers (if applicable)
+│   ├── middleware/  # Auth and request validation
 │   ├── services/    # Core business logic
 │   ├── types/       # TypeScript interfaces and types
 │   └── utils/       # Shared helpers
 ├── Dockerfile       # Container build instructions
 ├── tsconfig.json    # TypeScript configuration
 └── package.json     # Service-specific dependencies
+...
+```
