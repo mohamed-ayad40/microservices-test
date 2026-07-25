@@ -68,5 +68,4 @@ Each microservice follows a clean, modular structure inside its directory:
 ├── Dockerfile       # Container build instructions
 ├── tsconfig.json    # TypeScript configuration
 └── package.json     # Service-specific dependencies
-...
 ```
